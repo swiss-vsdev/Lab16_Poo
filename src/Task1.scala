@@ -20,6 +20,19 @@ object InsertionSort {
   }
 }
 
+object FisherYates {
+  def mix(a: Array[Int]): Array[Int] = {
+    for(i <- (a.length-1) to 1 by -1){
+      val j = (new Random()).nextInt(i)
+      val tmp = a(j)
+      a(j) = a(i)
+      a(i) = tmp
+    }
+    a
+  }
+
+}
+
 object RandomArrayFactory extends ArrayFactory {
   override def create(size: Int): Array[Int] = {
     val a : Array[Int] = new Array[Int](size)
@@ -59,9 +72,34 @@ object ShuffleArrayFactory extends ArrayFactory {
   }
 }
 
+object AlmostSortedArrayFactory extends ArrayFactory {
+  override def create(size: Int): Array[Int] = {
+    val p : Double = 0.3 // 30%
+    val times : Int = (math.round(size * p)).toInt
+    val a : Array[Int] = new Array[Int](size)
+
+    for(i <- a.indices){
+      a(i) = i
+    }
+
+    for(i <- 0 until times){
+      var k : Int = 0
+      while (k == 0){
+        k = (new Random()).nextInt(a.length-1)
+      }
+      val j = (new Random()).nextInt(k)
+      val tmp = a(j)
+      a(j) = a(i)
+      a(i) = tmp
+    }
+    a
+  }
+}
+
 
 object Task1 extends App {
   println(RandomArrayFactory.create(11).mkString(" "))
   println(InvertedSortedArrayFactory.create(11).mkString(" "))
   println(ShuffleArrayFactory.create(11).mkString(" "))
+  println(AlmostSortedArrayFactory.create(50).mkString(" "))
 }
