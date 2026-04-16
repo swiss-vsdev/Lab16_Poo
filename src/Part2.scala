@@ -4,7 +4,7 @@ trait Sort {
 
 object SelectionSort extends Sort {
   override def sort(a: Array[Int]): Array[Int] = {
-    println("Input Array :\n" + a.mkString(" ") + "\n")
+    // println("Input Array :\n" + a.mkString(" ") + "\n")
     for(j <- a.indices) {
       var minIndex : Int = j
       for (i <- j until a.length-1) {

@@ -1,4 +1,7 @@
-
+import org.scalatest.matchers.must.Matchers
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
+import org.scalatest.prop.TableDrivenPropertyChecks
+import org.scalatest.{GivenWhenThen, propspec}
 
 class SortSpec extends propspec.AnyPropSpec with TableDrivenPropertyChecks with Matchers with GivenWhenThen {
   val factories =
