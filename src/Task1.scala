@@ -95,11 +95,3 @@ object AlmostSortedArrayFactory extends ArrayFactory {
     a
   }
 }
-
-
-object Task1 extends App {
-  println(RandomArrayFactory.create(11).mkString(" "))
-  println(InvertedSortedArrayFactory.create(11).mkString(" "))
-  println(ShuffleArrayFactory.create(11).mkString(" "))
-  println(AlmostSortedArrayFactory.create(50).mkString(" "))
-}
