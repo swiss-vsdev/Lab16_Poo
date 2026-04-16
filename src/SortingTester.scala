@@ -1,4 +1,5 @@
 import scala.collection.mutable.ArrayBuffer
+import java.io._
 
 class SortingTester {
   val algos : Array[Sort] = Array[Sort](SelectionSort, YSort)
@@ -12,18 +13,30 @@ class SortingTester {
   val size : Array[Int] = s.toArray
 
   def run() : Unit = {
+    val pw = new PrintWriter(new FileOutputStream("./TestResults/results.csv"))
+    pw.println("Algorithme,Taille,Temps[ms]")
     for(i <- size){
       val a : Array[Int] = RandomArrayFactory.create(i)
       for(algo <- algos) {
         val a1 : Array[Int] = a.clone()
-        val algoName = algo.getClass.getSimpleName()
-        println(s"Algo : ${algoName.substring(0,(algoName.length-1))} - Size : $i")
+        var algoName = algo.getClass.getSimpleName()
+        algoName = algoName.substring(0,(algoName.length-1))
+
+        pw.print(algoName + ",")
+        pw.print(i + ",")
+
+        println(s"Algo : $algoName - Size : $i")
         val st = System.currentTimeMillis()
+
         algo.sort(a1)
+
         val duration = System.currentTimeMillis() - st
+
+        pw.println(duration)
         println("Duration : " + duration + " [ms]\n")
       }
     }
+    pw.close()
   }
 }
 

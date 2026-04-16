@@ -1,0 +1,11 @@
+Algorithme,Taille,Temps[ms]
+SelectionSort,100,2
+YSort,100,2
+SelectionSort,1000,4
+YSort,1000,1
+SelectionSort,10000,196
+YSort,10000,4
+SelectionSort,50000,2905
+YSort,50000,4
+SelectionSort,100000,11683
+YSort,100000,8
