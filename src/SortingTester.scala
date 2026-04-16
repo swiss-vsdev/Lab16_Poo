@@ -1,48 +1,34 @@
+import scala.collection.mutable.ArrayBuffer
+
 class SortingTester {
-  def selectionSortRandomArray(size : Int): Unit = {
-    println("---------------------------------------------------------")
-    println("Selection Sort - Random Array - " + size + " :")
-    println("---------------------------------------------------------")
-    val a = RandomArrayFactory.create(size)
-    val st = System.currentTimeMillis()
-    SelectionSort.sort(a)
-    val duration = System.currentTimeMillis() - st
-    println("Duration : " + duration + " [ms]\n")
-  }
-  def selectionSortInvertedSortedArray(size : Int): Unit = {
-    println("---------------------------------------------------------")
-    println("Selection Sort - InvertedSortedArray - " + size + " :")
-    println("---------------------------------------------------------")
-    val a = InvertedSortedArrayFactory.create(size)
-    val st = System.currentTimeMillis()
-    SelectionSort.sort(a)
-    val duration = System.currentTimeMillis() - st
-    println("Duration : " + duration + " [ms]\n")
-  }
-  def selectionSortShuffleArray(size : Int): Unit = {
-    println("---------------------------------------------------------")
-    println("Selection Sort - ShuffleArray - " + size + " :")
-    println("---------------------------------------------------------")
-    val a = ShuffleArrayFactory.create(size)
-    val st = System.currentTimeMillis()
-    SelectionSort.sort(a)
-    val duration = System.currentTimeMillis() - st
-    println("Duration : " + duration + " [ms]\n")
+  val algos : Array[Sort] = Array[Sort](SelectionSort, YSort)
+
+  val s : ArrayBuffer[Int] = ArrayBuffer[Int]()
+  s.addOne(100)
+  s.addOne(1000)
+  s.addOne(10000)
+  s.addOne(50000)
+  s.addOne(100000)
+  val size : Array[Int] = s.toArray
+
+  def run() : Unit = {
+    for(i <- size){
+      val a : Array[Int] = RandomArrayFactory.create(i)
+      for(algo <- algos) {
+        val a1 : Array[Int] = a.clone()
+        val algoName = algo.getClass.getSimpleName()
+        println(s"Algo : ${algoName.substring(0,(algoName.length-1))} - Size : $i")
+        val st = System.currentTimeMillis()
+        algo.sort(a1)
+        val duration = System.currentTimeMillis() - st
+        println("Duration : " + duration + " [ms]\n")
+      }
+    }
   }
 }
 
 object Tester extends App {
   val sortingTest = new SortingTester
 
-  sortingTest.selectionSortRandomArray(1000)
-  sortingTest.selectionSortRandomArray(10000)
-  sortingTest.selectionSortRandomArray(100000)
-
-  sortingTest.selectionSortInvertedSortedArray(1000)
-  sortingTest.selectionSortInvertedSortedArray(10000)
-  sortingTest.selectionSortInvertedSortedArray(100000)
-
-  sortingTest.selectionSortShuffleArray(1000)
-  sortingTest.selectionSortShuffleArray(10000)
-  sortingTest.selectionSortShuffleArray(100000)
+  sortingTest.run()
 }
