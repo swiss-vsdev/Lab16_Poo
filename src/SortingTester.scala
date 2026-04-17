@@ -17,7 +17,7 @@ class SortingTester {
 
   def run(): Unit = {
     val pw = new PrintWriter(new FileOutputStream("./TestResults/results.csv"))
-    pw.println("Algorithme,Taille,Temps[ms]")
+    pw.println("Algorithme,ArrayFactory,Taille,Temps[ms]")
     for (factory <- arrayfactories) {
       for (i <- size) {
         val a: Array[Int] = factory.create(i)
