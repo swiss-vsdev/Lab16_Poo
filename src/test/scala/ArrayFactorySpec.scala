@@ -2,7 +2,6 @@ import org.scalatest.matchers.must.Matchers
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import org.scalatest.prop.TableDrivenPropertyChecks
 import org.scalatest.propspec
-
 class ArrayFactorySpec extends propspec.AnyPropSpec with TableDrivenPropertyChecks with Matchers {
 
   val factories =
