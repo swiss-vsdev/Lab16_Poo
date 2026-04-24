@@ -5,7 +5,7 @@ class SortingTester {
   val algos: Array[Sort] = Array[Sort](SelectionSort, YSort)
 
   val arrayfactories: Array[ArrayFactory] =
-    Array[ArrayFactory](RandomArrayFactory, AlmostSortedArrayFactory, ShuffleArrayFactory)
+    Array[ArrayFactory](RandomArrayFactory, AlmostSortedArrayFactory, ShuffleArrayFactory, InvertedSortedArrayFactory)
 
   val s: ArrayBuffer[Int] = ArrayBuffer[Int]()
   s.addOne(100)
