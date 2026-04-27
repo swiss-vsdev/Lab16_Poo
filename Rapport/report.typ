@@ -194,10 +194,10 @@ Le rapport $frac(T_"SelectionSort"(n), T_"YSort"(n))$ sur RandomArrayFactory :
 
 #pagebreak()
 
-#let code_sample = read("../src/main/scala/Part2.scala")
+#let code_sample = read("../src/main/scala/Task2.scala")
 #figure(code()[
   #raw(code_sample, lang: "scala")
-], caption: "Code du fichier `Part2.scala`")
+], caption: "Code du fichier `Task2.scala`")
 
 
 #let code_sample = read("../src/main/scala/SortingTester.scala")

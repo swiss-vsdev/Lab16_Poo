@@ -20,7 +20,7 @@ Benchmark comparant **SelectionSort** et **YSort** sur quatre types de tableaux,
 src/main/scala/
 ├── Task1.scala          \# Trait ArrayFactory + 4 implémentations
 ├── SortApplication.scala\# Affichage et vérification des factories
-├── Part2.scala          \# Trait Sort + SelectionSort
+├── Task2.scala          \# Trait Sort + SelectionSort
 ├── SortingTester.scala  \# Benchmark complet → results.csv
 └── Task8.scala          \# Recherche dichotomique taille ~1s
 
