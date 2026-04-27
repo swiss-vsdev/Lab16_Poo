@@ -59,6 +59,7 @@ Aucune erreur n'a été relevée.
   [50 000], [2910], [4],
   [100 000],[11829],[10],
 ), caption: [Temps d'exécution sur `RandomArrayFactory`])
+#align(center)[#image("../TestResults/random.png", width: 50%)]
 
 On constate une grosse différence à partir de $n = 10k$.
 
@@ -77,6 +78,7 @@ On constate une grosse différence à partir de $n = 10k$.
   [50 000], [908], [3],
   [100 000],[3834],[6],
 ), caption: [Temps d'exécution sur `AlmostSortedArrayFactory`])
+#align(center)[#image("../TestResults/almost.png", width: 50%)]
 
 == Tableaux mélangés
 
@@ -91,6 +93,7 @@ On constate une grosse différence à partir de $n = 10k$.
   [50 000], [628], [2],
   [100 000],[2519],[4],
 ), caption: [Temps d'exécution sur `ShuffleArrayFactory`])
+#align(center)[#image("../TestResults/shuffle.png", width: 50%)]
 
 == Tableaux inversés
 
@@ -105,6 +108,7 @@ On constate une grosse différence à partir de $n = 10k$.
   [50 000], [635], [2],
   [100 000],[2620],[4],
 ), caption: [Temps d'exécution sur `InvertedSortedArrayFactory`])
+#align(center)[#image("../TestResults/inverted.png", width: 50%)]
 
 
 = Analyse
