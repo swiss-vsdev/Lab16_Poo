@@ -28,15 +28,16 @@
 
 = Introduction
 
-Ce rapport présente une comparaison des performances de deux algorithmes de tri : *SelectionSort* et *YSort*. Les mesures ont été effectuées sur trois types de tableaux : aléatoires, presque triés, mélangés et inversés, pour des tailles allant de 100 à 100 000 éléments.
+Ce rapport présente une comparaison des performances de deux algorithmes de tri : *SelectionSort* et *YSort*. Les mesures ont été effectuées sur quatre types de tableaux : aléatoires, presque triés, mélangés et inversés, pour des tailles allant de 100 à 100 000 éléments.
 
 == Méthodologie
 
-Les tests ont été réalisés à l'aide de trois factories :
+Les tests ont été réalisés à l'aide de quatre factories :
 
 - *RandomArrayFactory* : tableaux générés aléatoirement
 - *AlmostSortedArrayFactory* : tableaux quasi-triés
 - *ShuffleArrayFactory* : tableaux avec permutations aléatoires
+- *InvertedSortedArrayFactory* : tableaux inversés
 
 Pour chaque combinaison `(algorithme, factory, taille)`, le temps d'exécution est mesuré en millisecondes. Les résultats bruts sont disponibles dans le fichier `results.csv`.
 
@@ -144,6 +145,12 @@ Le rapport $frac(T_"SelectionSort"(n), T_"YSort"(n))$ sur RandomArrayFactory :
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `Task1.scala`")
 
+#let code_sample = read("code/SortApplication.scala")
+#figure(code()[
+  #raw(code_sample, lang: "scala")
+], caption: "Code du fichier `SortApplication.scala`")
+
+#pagebreak()
 
 #let code_sample = read("code/Part2.scala")
 #figure(code()[
