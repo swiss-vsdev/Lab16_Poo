@@ -40,7 +40,10 @@ Les tests ont été réalisés à l'aide de quatre factories :
 - *InvertedSortedArrayFactory* : tableaux inversés
 
 Pour chaque combinaison `(algorithme, factory, taille)`, le temps d'exécution est mesuré en millisecondes. Les résultats bruts sont disponibles dans le fichier `results.csv`.
+= Tests
+Les factories et l'algorithme SelectionSort ont été validés à l'aide des tests unitaires *ScalaTest* (`ArrayFactorySpec.scala` et `SortSpec.scala`) fournis avec le labo.
 
+Aucune erreur n'a été relevée.
 = Résultats
 
 == Tableaux aléatoires
@@ -106,6 +109,10 @@ On constate une grosse différence à partir de $n = 10k$.
 
 = Analyse
 
+== Résultats attendus vs observés
+
+On s'attendait à ce que SelectionSort soit plus lent en général, mais on observe également qu'il est aussi lent sur les tableaux presque triés que sur les aléatoires. Normalement on pourrait penser qu'un tableau déjà quasi-trié serait plus rapide à trier, mais SelectionSort parcourt toujours tout le tableau pour trouver le minimum donc ça change rien. YSort lui profite un peu des structures partiellement ordonnées, ce qui explique ses temps encore plus bas sur AlmostSorted.
+
 == Complexité observée
 
 SelectionSort effectue systématiquement $frac(n(n-1), 2)$ comparaisons, ce qui correspond à une complexité :
@@ -117,6 +124,33 @@ Cela explique la croissance quadratique observée : passer de $n = 10 000$ à $n
 YSort, lui, affiche une croissance quasi-linéaire sur tous les types de tableaux, compatible avec une complexité :
 
 $ T(n) = O(n log n) $
+
+#pagebreak()
+
+=== Temps prévu pour $10^12$ éléments
+YSort a une complexité $O(n log n)$. En se basant sur notre mesure à $n = 100k$ ($10^5$) ≈ 10 ms pour des tableaux aléatoires, on peut estimer $t(n)$ :
+
+$ t(n) approx t_(10^5) dot frac(n log n, 10^5 log 10^5) $
+
+Avec $n = 10^12$ :
+
+$ t(10^12) = 10[\m\s] dot frac(10^12 dot log(10^12), 10^5 dot log(10^5)) = 10 dot frac(12 dot 10^7,5) = 24 dot 10^7 [\m\s] = 2. overline(7) "jours" $
+
+=== SelectionSort à $10^12$ éléments
+
+Avec $O(n^2)$, en extrapolant depuis $n = 100k$ ($10^5$) ≈ 11'829 ms :
+
+$ t(n) approx t_(10^5) dot frac((10^n)^2, (10^5)^2) $
+
+Avec $n = 10^12$ :
+
+$ t(10^12) = 11829[\m\s] dot frac((10^12)^2, (10^5)^2) = 11829 dot frac(10^24,10^10) = 11829 dot 10^14[\m\s] approx 375'095 "siècles" $
+
+Autrement dit : totalement impossible et irréaliste.
+
+=== Un algorithme de tri peut-il être meilleur que $O(n)$ ?
+
+Non. Pour trier $n$ éléments, il faut au minimum lire chaque élément une fois. Il est impossible de trier sans connaître les valeurs contenues.
 
 == Insensibilité au type de tableau
 
