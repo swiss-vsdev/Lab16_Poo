@@ -175,6 +175,10 @@ Le rapport $frac(T_"SelectionSort"(n), T_"YSort"(n))$ sur RandomArrayFactory :
   [100 000],[1183×],
 ), caption: [Ratio SelectionSort / YSort sur tableaux aléatoires])
 
+= Conclusion
+
+*YSort* surpasse largement *SelectionSort* sur tous les types et tailles de tableaux testés. L'écart croît avec $n$, confirmant la différence de classe de complexité entre $O(n^2)$ et $O(n log n)$. Pour tout usage pratique au-delà de quelques milliers d'éléments, SelectionSort devient inutilisable.
+
 #pagebreak()
 = Code Scala
 
@@ -206,6 +210,4 @@ Le rapport $frac(T_"SelectionSort"(n), T_"YSort"(n))$ sur RandomArrayFactory :
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `Task8.scala`")
 
-= Conclusion
-
-*YSort* surpasse largement *SelectionSort* sur tous les types et tailles de tableaux testés. L'écart croît avec $n$, confirmant la différence de classe de complexité entre $O(n^2)$ et $O(n log n)$. Pour tout usage pratique au-delà de quelques milliers d'éléments, SelectionSort devient inutilisable.
+PPPPS : Sorry pour la 11ème page
