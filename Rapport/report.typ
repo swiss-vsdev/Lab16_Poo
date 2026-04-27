@@ -201,6 +201,10 @@ Le rapport $frac(T_"SelectionSort"(n), T_"YSort"(n))$ sur RandomArrayFactory :
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `SortingTester.scala`")
 
+#let code_sample = read("code/Task8.scala")
+#figure(code()[
+  #raw(code_sample, lang: "scala")
+], caption: "Code du fichier `Task8.scala`")
 
 = Conclusion
 
