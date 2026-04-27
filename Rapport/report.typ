@@ -175,37 +175,39 @@ Le rapport $frac(T_"SelectionSort"(n), T_"YSort"(n))$ sur RandomArrayFactory :
   [100 000],[1183×],
 ), caption: [Ratio SelectionSort / YSort sur tableaux aléatoires])
 
+= Conclusion
+
+*YSort* surpasse largement *SelectionSort* sur tous les types et tailles de tableaux testés. L'écart croît avec $n$, confirmant la différence de classe de complexité entre $O(n^2)$ et $O(n log n)$. Pour tout usage pratique au-delà de quelques milliers d'éléments, SelectionSort devient inutilisable.
+
 #pagebreak()
 = Code Scala
 
-#let code_sample = read("code/Task1.scala")
+#let code_sample = read("../src/main/scala/Task1.scala")
 #figure(code()[
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `Task1.scala`")
 
-#let code_sample = read("code/SortApplication.scala")
+#let code_sample = read("../src/main/scala/SortApplication.scala")
 #figure(code()[
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `SortApplication.scala`")
 
 #pagebreak()
 
-#let code_sample = read("code/Part2.scala")
+#let code_sample = read("../src/main/scala/Part2.scala")
 #figure(code()[
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `Part2.scala`")
 
 
-#let code_sample = read("code/SortingTester.scala")
+#let code_sample = read("../src/main/scala/SortingTester.scala")
 #figure(code()[
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `SortingTester.scala`")
 
-#let code_sample = read("code/Task8.scala")
+#let code_sample = read("../src/main/scala/Task8.scala")
 #figure(code()[
   #raw(code_sample, lang: "scala")
 ], caption: "Code du fichier `Task8.scala`")
 
-= Conclusion
-
-*YSort* surpasse largement *SelectionSort* sur tous les types et tailles de tableaux testés. L'écart croît avec $n$, confirmant la différence de classe de complexité entre $O(n^2)$ et $O(n log n)$. Pour tout usage pratique au-delà de quelques milliers d'éléments, SelectionSort devient inutilisable.
+PPPPS : Sorry pour la 11ème page
